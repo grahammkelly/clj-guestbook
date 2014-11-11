@@ -11,3 +11,4 @@ pom.xml
 .lein-env
 
 .nrepl-port
+*.sq3
