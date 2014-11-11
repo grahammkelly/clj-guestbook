@@ -4,9 +4,12 @@
   ;; (:import java.util.Date)
 )
 
+(defn db-name []
+  "db.sq3")
+
 (def db {:classname "org.sqlite.JDBC",
          :subprotocol "sqlite",
-         :subname "db.sq3"})
+         :subname (db-name)})
 
 (defn create-guestbook-table []
   (sql/with-connection db
