@@ -4,6 +4,20 @@
             [hiccup.form :refer :all])
 )
 
+(defn show-guests []
+  [:ul.guests
+    (for [{:keys [message name timestamp]}
+           [{:message "Howdy" :name "Bob" :timestamp nil}
+             {:message "Hello" :name "Tim" :timestamp nil}]]
+      [:li
+        [:blockquote message]
+        [:p "- " [:cite name]]
+        [:time timestamp]
+      ]
+    )
+  ]
+)
+
 (defn home [& [name message error]]
   (layout/common
      [:h1 "Guestbook"]
@@ -22,20 +36,6 @@
               (submit-button "comment"))
 
    )
-)
-
-(defn show-guests []
-  [:ul.guests
-    (for [{:keys [message name timestamp]}
-           [{:message "Howdy" :name "Bob" :timestamp nil}
-             {:message "Hello" :name "Tim" :timestamp nil}]]
-      [:li
-        [:blockquote message]
-        [:p "- " [:cite name]]
-        [:time timestamp]
-      ]
-    )
-  ]
 )
 
 (defn save-message [name message]
