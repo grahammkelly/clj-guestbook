@@ -1,3 +1,18 @@
+#IDE ignore settings
+#IntelliJ
+.idea
+*.iml
+*.iws
+*.ipr
+
+#Eclipse
+.project
+.classpath
+.settings
+
+
+
+#Standard Clojure ignore settings
 /target
 /lib
 /classes
